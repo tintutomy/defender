@@ -29,9 +29,12 @@ class Registration extends Component {
         body: JSON.stringify({ firstName:firstNameVal, lastName: lastNameVal, address: addressVal,
             category: categoryVal, availability: availabilityVal, postcode: postcodeVal, mobileNumber:mobileNumberVal })
     };
-    fetch('URL', requestOptions)
+    fetch('http://localhost:8080/saveVolunteerDetails', requestOptions)
         .then(response => response.json())
-        .then(data => this.setState({ postId: data.id }));
+        .then(data => this.setState({ postId: data.voluteerId }));
+        if(this.postId!==null){
+          alert("Successfully registered");
+        }
 
   }
 

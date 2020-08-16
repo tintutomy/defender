@@ -24,9 +24,12 @@ class Chat extends Component {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: messageVal, category: categoryVal, postcode:postcodeVal })
     };
-    fetch('URL', requestOptions)
+    fetch('http://localhost:8080/broadcastMessage', requestOptions)
         .then(response => response.json())
-        .then(data => this.setState({ postId: data.id }));
+        .then(data => this.setState({ messageSent: data }));
+        if(this.messageSent){
+          alert("Message successfully sent");
+        }
 
   }
 
