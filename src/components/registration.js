@@ -20,7 +20,7 @@ class Registration extends Component {
     let mobileNumberVal = this.refs.mobileNumber.value;
     let addressVal = this.refs.address.value;
     let categoryVal = this.refs.category.value;
-    let availabilityVal = this.refs.availability.value;
+    let availabilityVal = this.refs.availability.value === "on" ? true :false;
     let postcodeVal = this.refs.postcode.value
 
     const requestOptions = {
